@@ -8,5 +8,5 @@ RUN npm install
 
 COPY ./ ./
 
-# The dev command is tied to the script in package.json
-CMD ["npm", "run", "dev"]
+# The start command is tied to the script in package.json
+CMD ["npm", "run", "start"]
