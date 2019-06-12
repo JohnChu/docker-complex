@@ -9,15 +9,15 @@ script:
   - docker run react-test -e CI=true npm test -- --coverage
 
 after_success:
-  - docker build -t multi-client ./client
-  - docker build -t multi-nginx ./nginx
-  - docker build -t multi-server ./server
-  - docker build -t multi-worker ./worker
+  - docker build -t johnbchu/multi-client ./client
+  - docker build -t johnbchu/multi-nginx ./nginx
+  - docker build -t johnbchu/multi-server ./server
+  - docker build -t johnbchu/multi-worker ./worker
 
   # Log in to the docker CLI
   - echo "$docker_password" | DOCKER LOGIN -U "$docker_id" --password-stdin
   # Push to docker hub
-  - docker push muti-client
-  - docker push multi-nginx
-  - docker push multi-server
-  - docker push multi-worker
+  - docker push johnbchu/muti-client
+  - docker push johnbchu/multi-nginx
+  - docker push johnbchu/multi-server
+  - docker push johnbchu/multi-worker
